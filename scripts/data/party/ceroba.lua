@@ -19,7 +19,9 @@ function character:init()
     self.has_xact = true
     self.xact_name = "C-Action"
 
-    self:addSpell("diamond_guard")
+    if Mod.libs["better_battles"] then
+        self:addSpell("diamond_guard")
+    end
     self:addSpell("paralyze")
 
     self.health = 180
