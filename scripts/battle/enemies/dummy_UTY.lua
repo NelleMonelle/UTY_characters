@@ -34,7 +34,9 @@ function Dummy:init()
     self:registerAct("Smile")
     self:registerAct("Compliment", "", {"martlet"})
     self:registerAct("Rev. Spin", "Bullet\nAttack", nil, 70)
-    self:registerAct("M. Guard", "Raise\nShields", {"ceroba"}, 70)
+    if Mod.libs["better_battles"] then
+        self:registerAct("M. Guard", "Raise\nShields", {"ceroba"}, 70)
+    end
 end
 
 function Dummy:onAct(battler, name)
