@@ -46,6 +46,24 @@ function actor:init()
 
         ["battle/transition"]   = {"battle/intro", 1/15, false},
         ["battle/victory"]      = {"battle/victory", 1/10, false},
+
+        -- Cutscene animations
+        ["lean_back"]      = {"lean_back", 1/8, false},
+        ["show_mask"]      = {"show_mask", 1/8, false},
+
+        -- Animations from Ceroba's flashbacks
+        ["run_worried"]    = {"flashback/run_worried", 1/8, false},
+        ["sit"]            = {"flashback/sit", 1/8, false},
+        ["stand_up"]       = {"flashback/stand_up", 1/8, false},
+
+        -- Animations from Steamworks with Ceroba
+        ["deflect"]        = {"steamworks/deflect", 1/8, false},
+        ["guard"]          = {"steamworks/guard", 1/8, false},
+        ["unguard"]        = {"steamworks/unguard", 1/8, false},
+        ["picture"]        = {"steamworks/picture", 1/8, false},
+        ["punch"]          = {"steamworks/punch", 1/8, false},
+        ["unpunch"]        = {"steamworks/unpunch", 1/8, false},
+        ["staff"]          = {"steamworks/staff", 1/8, false},
     }
 
     self.offsets = {
@@ -82,8 +100,29 @@ function actor:init()
         ["battle/intro"] = {-6, -6},
         ["battle/victory"] = {-6, -6},
 
-        -- Cutscene offsets
+        -- Cutscene animations offsets
+        ["lean_back"] = {0, 0},
+        ["show_mask"] = {0, 0},
+
+        ["flashback/run_worried"] = {0, 0},
+        ["flashback/sit"] = {0, 0},
+        ["flashback/stand_up"] = {0, 0},
+
+        ["steamworks/deflect"] = {0, 0},
+        ["steamworks/guard"] = {0, 0},
+        ["steamworks/unguard"] = {0, 0},
+        ["steamworks/picture"] = {0, 0},
+        ["steamworks/punch"] = {0, 0},
+        ["steamworks/unpunch"] = {0, 0},
+        ["steamworks/staff"] = {0, 0},
+
+        -- Cutscene sprites offsets
+        ["cool"] = {0, 0},
+        ["cool_alt"] = {0, 0},
         ["fall"] = {0, 0},
+        ["lean"] = {0, 0},
+
+        ["flashback/worried"] = {0, 0},
     }
 end
 
