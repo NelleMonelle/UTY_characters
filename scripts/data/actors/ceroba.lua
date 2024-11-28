@@ -21,6 +21,16 @@ function actor:init()
 
     self.can_blush = false
 
+    self.talk_sprites = {
+        ["talk/down"] = 1/4,
+        ["talk/left"] = 1/4,
+        ["talk/right"] = 1/4,
+        ["talk/up"] = 1/4,
+
+        ["flashback/kneel_talk"] = 1/4,
+        ["flashback/syringe_talk"] = 1/4
+    }
+
     self.animations = {
         ["battle/idle"]         = {"battle/idle", 0.2, true},
 

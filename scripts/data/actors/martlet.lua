@@ -3,48 +3,47 @@ local actor, super = Class(Actor, "martlet")
 function actor:init()
     super.init(self)
 
-    -- Display name (optional)
     self.name = "Martlet"
 
-    -- Width and height for this actor, used to determine its center
     self.width = 27
     self.height = 49
 
-    -- Hitbox for this actor in the overworld (optional, uses width and height by default)
     self.hitbox = {4, 32, 19, 14}
 
-    -- Color for this actor used in outline areas (optional, defaults to red)
     self.color = {67/255, 124/255, 230/255}
 
-    -- Whether this actor flips horizontally (optional, values are "right" or "left", indicating the flip direction)
     self.flip = nil
 
-    -- Path to this actor's sprites (defaults to "")
     self.path = "party/martlet/light"
-    -- This actor's default sprite or animation, relative to the path (defaults to "")
     self.default = "walk"
 
-    -- Sound to play when this actor speaks (optional)
     self.voice = "martlet"
-    -- Path to this actor's portrait for dialogue (optional)
     self.portrait_path = "face/martlet"
-    -- Offset position for this actor's portrait (optional)
     self.portrait_offset = {-12, -12}
 
-    -- Whether this actor as a follower will blush when close to the player
     self.can_blush = false
 
-    -- Table of talk sprites and their talk speeds (default 0.25)
-    self.talk_sprites = {}
+    self.talk_sprites = {
+        ["talk/down"] = 1/4,
+        ["talk/left"] = 1/4,
+        ["talk/right"] = 1/4,
+        ["talk/up"] = 1/4,
 
-    -- Table of sprite animations
+        ["talk_puddle/down"] = 1/4,
+        ["talk_puddle/left"] = 1/4,
+        ["talk_puddle/right"] = 1/4,
+        ["talk_puddle/up"] = 1/4,
+
+        ["talk_roof/down"] = 1/4,
+        ["talk_roof/left"] = 1/4,
+        ["talk_roof/right"] = 1/4,
+        ["talk_roof/up"] = 1/4,
+
+        ["book_talk"] = 1/4
+    }
+
     self.animations = {
-
-        -- Movement animations
-        ["slide"] = { "slide", 0, 0},
-        ["up_noeyes"] = {"up_noeyes", 0, 0, 1.25},
-
-
+        -- Battle animations
         ["battle/idle"]         = {"battle/idle", 0.2, true},
 
         ["battle/attack"]       = {"battle/attack", 1/15, false},
@@ -69,8 +68,11 @@ function actor:init()
         ["battle/transition"]   = {"battle/intro", 1/15, false},
         ["battle/victory"]      = {"battle/victory", 1/10, false},
 
+        -- Cutscene animations
+        ["book"]        = {"book", 1/15, false},
+        ["fly_away"]    = {"fly_away", 1/15, false},
+        ["stand_up"]    = {"stand_up", 1/15, false},
         ["wakeup"]      = {"wakeup", 1/15, false},
-        ["stand_up"]      = {"stand_up", 1/15, false},
     }
 
     self.offsets = {
@@ -84,11 +86,6 @@ function actor:init()
         ["run/right"] = {-7, -9},
         ["run/left"] = {-7, -9},
         ["run/up"] = {-3, -5},
-
-        ["angry_intro"] = {0, 0},
-        ["shocked"] = {0, -5},
-        ["noeyes"] = {0, 0},
-
 
         -- Battle offsets
         ["battle/idle"] = {-2, 0},
@@ -112,8 +109,11 @@ function actor:init()
         ["battle/intro"] = {-2, 0},
         ["battle/victory"] = {-2, 0},
 
-        ["wakeup"] = {0, 9},
-        ["stand_up"] = {0, 9},
+        -- Cutscene offsets
+        ["book"] = {0, 0},
+        ["fly_away"] = {0, 0},
+        ["stand_up"] = {0, 0},
+        ["wakeup"] = {0, 0},
     }
 end
 
