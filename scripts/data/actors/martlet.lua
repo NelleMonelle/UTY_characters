@@ -8,7 +8,7 @@ function actor:init()
 
     -- Width and height for this actor, used to determine its center
     self.width = 27
-    self.height = 45
+    self.height = 49
 
     -- Hitbox for this actor in the overworld (optional, uses width and height by default)
     self.hitbox = {4, 32, 19, 14}
@@ -20,7 +20,7 @@ function actor:init()
     self.flip = nil
 
     -- Path to this actor's sprites (defaults to "")
-    self.path = "party/martlet/dark"
+    self.path = "party/martlet/light"
     -- This actor's default sprite or animation, relative to the path (defaults to "")
     self.default = "walk"
 

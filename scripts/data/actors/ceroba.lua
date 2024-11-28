@@ -12,7 +12,7 @@ function actor:init()
 
     self.color = {1, 1, 0}
 
-    self.path = "party/ceroba/dark"
+    self.path = "party/ceroba/light"
     self.default = "walk"
 
     self.voice = "ceroba"
@@ -125,5 +125,12 @@ function actor:init()
         ["flashback/worried"] = {0, 0},
     }
 end
+
+--[[function actor:onTalkStart(text, sprite)
+    self:play(1/4)
+end
+function actor:onTalkEnd(text, sprite)
+    self:play(1/4)
+end]]
 
 return actor
